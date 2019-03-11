@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity
     public ListView lvArtikli;
 
 
-    private final String BASE_URL = "http://nurexport.com/demo/";
+    private final String BASE_URL = "http://nurexport.com/katalog/";
     private FragmentManager fragmentManager;
     private Fragment fragment = null;
     DatabaseHelper db;
@@ -138,7 +138,6 @@ public class MainActivity extends AppCompatActivity
 
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    Toast.makeText(MainActivity.this, "Permission denied to read your External storage", Toast.LENGTH_SHORT).show();
                 }
                 return;
             }
@@ -431,10 +430,10 @@ public class MainActivity extends AppCompatActivity
                 }
                 if (Ispravna==0){
                     macAdresa = getMacAddress(MainActivity.this);
-                    url_to_hit = "http://nurexport.com/demo/getJsonFake.php?id="+licenca+"&mac="+macAdresa;
+                    url_to_hit = "http://nurexport.com/katalog/getJsonFake.php?id="+licenca+"&mac="+macAdresa;
                 }
                 else {
-                    url_to_hit = "http://nurexport.com/demo/getJson.php";
+                    url_to_hit = "http://nurexport.com/katalog/getJson.php";
 
                 }
                 new JSONTask().execute(url_to_hit);
@@ -923,7 +922,7 @@ public class MainActivity extends AppCompatActivity
     }
      public void downloadImageURL(String fileName ,String imagePath){
         String filename = fileName+".jpg";
-        String downloadUrlOfImage = "http://nurexport.com/demo/"+imagePath;
+        String downloadUrlOfImage = "http://nurexport.com/katalog/"+imagePath;
 
         File direct =new File(Environment.DIRECTORY_PICTURES,
                         File.separator + "YourFolderName" + File.separator);
